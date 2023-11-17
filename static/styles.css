@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+h1 {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+h2 {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+#console {
+    position: absolute;
+    margin: 15px;
+    width: 240px;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.session {
+    margin-bottom: 40px;
+}
+
+.row {
+    width: 100%;
+}
+
+.listing-group {
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    position: absolute;
+    top: 20px;
+    right: 55px;
+    height: 300px;
+    z-index: 1;
+    border-radius: 10px;
+    max-width: 20%;
+    color: #fff;
+}
+
+/* scale annotation */
+.mapboxgl-ctrl.mapboxgl-ctrl-scale {
+    border-color: #6e6e6e;
+    background-color: white;
+    color: #131516;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.8); /* White with semi-transparency */
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; /* Narrower width */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

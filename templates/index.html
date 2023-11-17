@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Workplace Insights</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+        <!-- <link rel="stylesheet" href="/styles.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js"></script>
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css" rel="stylesheet">
+            <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+        <script src="https://www.unpkg.com/@mapsindoors/components@8.2.0/dist/mi-components/mi-components.js"></script>
+                <script src="https://app.mapsindoors.com/mapsindoors/js/sdk/4.25.0/mapsindoors-4.25.0.js?apikey=6f5ff9b73e704629b67653e7"></script>
+    </head>
+    <!-- Modal -->
+<div id="locationModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle">Location Details</h2>
+        <p id="building"></p>
+        <p id="externalId"></p>
+        <p id="floorName"></p>
+        <p id="locationType"></p>
+        <p id="name"></p>
+        <p id="type"></p>
+        <p id="venue"></p>
+    </div>
+</div>
+
+    <body>
+        <div id="map"></div>
+        <div id="console">
+            <h1>Movements in Aalborg</h1>
+            <h2>June 2023</h2>
+            <div class="session">
+                <div class="row labels">
+                </div>
+            </div>
+            <!-- Radius Slider -->
+<!-- Radius Slider -->
+<div class="session">
+    <h2>Radius: <label id="radius-label"></label></h2>
+    <input
+        id="radius-slider"
+        class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+        type="range"
+        min="1"
+        max="50"
+        step="1"
+    />
+</div>
+
+<!-- Opacity Slider -->
+<div class="session">
+    <h2>Opacity: <label id="opacity-label"></label></h2>
+    <input
+        id="opacity-slider"
+        class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+        type="range"
+        min="0"
+        max="1"
+        step="0.1"
+    />
+</div>
+
+<!-- Heatmap Color Scheme Selector -->
+<div class="session">
+    <h2>Heatmap Color Scheme:</h2>
+    <select
+        id="color-scheme-selector"
+        class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+    >
+        <option value="default">Default</option>
+        <option value="YlGn">YlGn</option>
+        <option value="YlGnBu">YlGnBu</option>
+        <!-- Add more options for additional color schemes -->
+    </select>
+</div>
+
+        </div>
+        <pre id="features"></pre>
+        <nav id="listing-group" class="listing-group">
+            <div id='location-info'></div>
+            <mi-list scroll-buttons-enabled="false" scroll-length="10"></mi-list>
+        </nav>
+
+   </body>
+</html>
